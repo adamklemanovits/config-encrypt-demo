@@ -17,27 +17,9 @@ import org.springframework.security.rsa.crypto.KeyStoreKeyFactory;
 
 @SpringBootApplication
 @EnableConfigServer
-@EnableConfigurationProperties(KeyProperties.class)
 public class ConfigServerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ConfigServerApplication.class, args);
 	}
-
-//	@Bean
-//	public EnvironmentEncryptor environmentEncryptor(TextEncryptorLocator textEncryptorLocator) {
-//		return new CipherEnvironmentEncryptor(textEncryptorLocator);
-//	}
-//
-//	@Bean
-//	public TextEncryptorLocator textEncryptorLocator(KeyProperties key) {
-//		KeyProperties.KeyStore keyStore = key.getKeyStore();
-//		KeyStoreTextEncryptorLocator locator = new KeyStoreTextEncryptorLocator(
-//				new KeyStoreKeyFactory(keyStore.getLocation(), keyStore.getPassword().toCharArray()),
-//				keyStore.getSecret(), keyStore.getAlias());
-//		locator.setRsaAlgorithm(key.getRsa().getAlgorithm());
-//		locator.setSalt(key.getRsa().getSalt());
-//		locator.setStrong(key.getRsa().isStrong());
-//		return locator;
-//	}
 }
